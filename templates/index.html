@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Calculator</title>
+</head>
+<body>
+    <form id="incomeForm">
+        <label for="income">How much is your annual income?</label>
+        <input type="number" id="income" required>
+        <button type="button" onclick="calculateAdjustedIncome()">Submit</button>
+    </form>
+    <p id="error" style="color: red;"></p>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
