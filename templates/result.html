@@ -6,6 +6,17 @@
     <title>Income Calculator Result</title>
 </head>
 <body>
-    <p>Your adjusted annual income is: ${{ adjusted_income|round(2) }}</p>
+    <h1>Income Calculator Result</h1>
+    <p>Federal Tax: ${{ federal_tax|round(2) }}</p>
+    <p>State Tax: ${{ state_tax|round(2) }}</p>
+    <p>FICA Tax: ${{ fica_tax|round(2) }}</p>
+    <p>SDI, SUI, FLI Tax: ${{ sdi_sui_fli_tax|round(2) }}</p>
+    <p>Other Taxes: ${{ total_tax|round(2) }}</p>
+    <p>Sales Taxes: ${{ sales_tax|round(2) }}</p>
+
+    <p>Total Income Adjusted For Inflation: ${{ total_income|round(2) }}</p>
+    <p>Total Savings: ${{ total_savings|round(2) }}</p>
+    <p>Total Tax: ${{ grand_total|round(2) }}</p>
+    <p>What's left for you to spend monthly: ${{ whats_left|round(2) }}</p>
 </body>
 </html>
