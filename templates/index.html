@@ -4,12 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Income Calculator</title>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 </head>
 <body>
-    <form id="incomeForm">
-        <label for="income">How much is your annual income?</label>
-        <input type="number" id="income" required>
-        <button type="button" onclick="calculateAdjustedIncome()">Submit</button>
+    <h1>Income Calculator</h1>
+    <form method="post" action="/form" onsubmit="calculateAdjustedIncome(); return false;">
+        <div>
+            <label for="annual_income">Annual Income:</label>
+            <input type="number" name="annual_income" required>
+        </div>
+
+          <div>
+            <label for="pre_tax_savings">Pre-tax Savings:</label>
+            <input type="number" name="pre_tax_savings" required>
+          </div>
+          
+          <div>
+            <label for="property_tax">Property Tax:</label>
+            <input type="number" name="property_tax" required>
+          </div>
+          
+          <div>
+            <label for="post_tax_savings">Post Tax Savings:</label>
+            <input type="number" name="post_tax_savings" required>
+          </div>
+          
+          <div>
+            <label for="capital_gain_tax">Capital Gain Tax:</label>
+            <input type="number" name="capital_gain_tax" required>
+          </div>
+          
+          <div>
+            <label for="car_rental_tax">Car Rental Tax:</label>
+            <input type="number" name="car_rental_tax" required>
+          </div>
+          
+          <div>
+            <label for="insurance_tax">Insurance Tax:</label>
+            <input type="number" name="insurance_tax" required>
+          </div>
+          
+          <div>
+            <label for="utility_tax">Utility Tax:</label>
+            <input type="number" name="utility_tax" required>
+          </div>
+          
+          <div>
+            <label for="gas_tax">Gas Tax:</label>
+            <input type="number" name="gas_tax" required>
+          </div>
+          
+          <div>
+            <label for="hotel_tax">Hotel Tax:</label>
+            <input type="number" name="hotel_tax" required>
+          </div>
+          
+          <div>
+            <label for="tobacco_tax">Tobacco Tax:</label>
+            <input type="number" name="tobacco_tax" required>
+          </div>
+          
+          <div>
+            <label for="alcohol_tax">Alcohol Tax:</label>
+            <input type="number" name="alcohol_tax" required>
+          </div>
+          
+          <div>
+            <label for="uber_tax">Uber Tax:</label>
+            <input type="number" name="uber_tax" required>
+          </div>
+          
+          <div>
+            <label for="weed_tax">Weed Tax:</label>
+            <input type="number" name="weed_tax" required>
+          </div>
+          
+          <div>
+            <label for="vape_tax">Vape Tax:</label>
+            <input type="number" name="vape_tax" required>
+          </div>
+          
+          <div>
+            <label for="flight_tax">Flight Tax:</label>
+            <input type="number" name="flight_tax" required>
+          </div>
+          
+          <div>
+            <label for="tire_tax">Tire Tax:</label>
+            <input type="number" name="tire_tax" required>
+          </div>
+          
+          <div>
+            <label for="gun_tax">Gun Tax:</label>
+            <input type="number" name="gun_tax" required>
+          </div>
+          
+          <div>
+            <label for="cell_tax">Cell Tax:</label>
+            <input type="number" name="cell_tax" required>
+          </div>
+          
+          <div>
+            <label for="toll_tax">Toll Tax:</label>
+            <input type="number" name="toll_tax" required>
+          </div>
+          
+          <div>
+            <label for="vehicle_reg_tax">Vehicle Registration Tax:</label>
+            <input type="number" name="vehicle_reg_tax" required>
+          </div>
+          
+          <div>
+            <label for="park_tax">Park Tax:</label>
+            <input type="number" name="park_tax" required>
+          </div>
+          
+          <div>
+            <label for="tuition_tax">Tuition Tax:</label>
+            <input type="number" name="tuition_tax" required>
+          </div>
+          
+          <div>
+            <label for="early_term_tax">Early Termination Tax:</label>
+            <input type="number" name="early_term_tax" required>
+          </div>
+          
+          <div>
+            <label for="late_tax">Late Fee Tax:</label>
+            <input type="number" name="late_tax" required>
+          </div>
+          
+          <div>
+            <label for="event_ticket_tax">Event Ticket Tax:</label>
+            <input type="number" name="event_ticket_tax" required>
+          </div>
+          
+          <div>
+            <label for="closing_tax">Closing Fee Tax:</label>
+            <input type="number" name="closing_tax" required>
+          </div>
+          
+          <div>
+            <label for="hoa_tax">HOA Tax:</label>
+            <input type="number" name="hoa_tax" required>
+          </div>
+          
+          <div>
+            <label for="pet_tax">Pet Tax:</label>
+            <input type="number" name="pet_tax" required>
+          </div>
+          
+          <div>
+            <label for="soda_tax">Soda Tax:</label>
+            <input type="number" name="soda_tax" required>
+          </div>
+          
+          <div>
+            <label for="atm_tax">ATM Fee Tax:</label>
+            <input type="number" name="atm_tax" required>
+          </div>
+          
+          <div>
+            <label for="realty_transfer_tax">Realty Transfer Tax:</label>
+            <input type="number" name="realty_transfer_tax" required>
+          </div>
+          
+          <div>
+            <label for="insuff_funds_tax">Insufficient Funds Tax:</label>
+            <input type="number" name="insuff_funds_tax" required>
+          </div>
+          
+          <div>
+            <label for="non_refundable_deposit_tax">Non-Refundable Deposit Tax:</label>
+            <input type="number" name="non_refundable_deposit_tax" required>
+          </div>
+          
+          <div>
+            <label for="parking_tax">Parking Tax:</label>
+            <input type="number" name="parking_tax" required>
+          </div>
+          
+
+        <button type="submit">Calculate</button>
     </form>
     <p id="error" style="color: red;"></p>
 
