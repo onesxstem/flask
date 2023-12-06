@@ -1,12 +1,6 @@
 <!-- home.html -->
 {% extends 'base.html' %}
 
-{% block head %}
-    {{ super() }}
-    <!-- Include the link to your styles.css file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-{% endblock %}
-
 {% block content %}
     <section class="hero">
         <h1>Welcome to MxMonex</h1>
