@@ -1,0 +1,18 @@
+<!-- store.html -->
+{% extends 'base.html' %}
+
+{% block title %}Store - Your Website{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Include the link to your styles.css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="coming-soon">
+        <h2>Exciting Things Are Coming Soon!</h2>
+        <p>We're working on something awesome for our store. Stay tuned for exclusive products and fantastic deals.</p>
+        <p>Thank you for your patience and support!</p>
+    </section>
+{% endblock %}

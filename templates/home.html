@@ -1,0 +1,17 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Include the link to your styles.css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Welcome to Your Website</h1>
+        <p>Empowering You with Financial Literacy and Awareness</p>
+        <a href="{{ url_for('calculator') }}" class="cta-button">Get Started</a>
+    </section>
+{% endblock %}
+

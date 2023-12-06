@@ -1,0 +1,52 @@
+<!-- mobile_app.html -->
+{% extends 'base.html' %}
+
+{% block title %}Mobile App - Your Website{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Include the link to your styles.css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>Our Mobile App</h2>
+    <p>Coming Soon...</p>
+
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>Feature 1:</strong> Comprehensive Tax Calculator: Utilize our advanced tax calculator to accurately estimate your tax liabilities and optimize your financial planning.</li>
+        <li><strong>Feature 2:</strong> Educational Finance Articles: Access a vast library of well-researched articles covering diverse financial topics, providing users with valuable insights and tips.</li>
+        <li><strong>Feature 3:</strong> Real-time Financial Market Data: Stay informed with up-to-the-minute prices for precious metals, stocks, cryptocurrencies, and more. Make informed investment decisions based on the latest market trends.</li>
+        <li><strong>Feature 4:</strong> Interactive Financial Calculators: Access a suite of interactive calculators for loan affordability, retirement planning, mortgage estimation, and more.</li>
+    </ul>
+
+    <h3>Why Choose Our App?</h3>
+    <p>
+        Our app aims to cover a broad spectrum of financial sectors, including budgeting, investments, savings, loans, and more. Users can access a wide range of financial tools and resources in one centralized platform, streamlining their financial management experience.
+    </p>
+    
+    <p>
+        <strong>Simplified Financial Management:</strong> We believe in simplifying financial complexities. Users won't need to navigate between multiple apps or platforms; instead, they can manage various financial aspects seamlessly in one place. The app provides an integrated solution for personal and business finance, eliminating the need for multiple applications.
+    </p>
+
+    <p>
+        <strong>Time and Resource Efficiency:</strong> Save time and effort by avoiding the hassle of switching between different apps for different financial needs. Our app offers efficiency and convenience, allowing users to focus on their financial goals.
+    </p>
+
+    <p>
+        <strong>Holistic Financial Insights:</strong> Gain a holistic view of your financial health with comprehensive insights and analytics. Track spending, monitor investments, and plan for the future all within a single app. The app provides users with actionable data and suggestions to make informed financial decisions.
+    </p>
+
+    <p>
+        <strong>User-Centric Design:</strong> Our user-centric design ensures that users, regardless of their financial expertise, can easily navigate and utilize the app's features. The interface is intuitive, making financial management accessible and enjoyable for everyone.
+    </p>
+
+    <p>
+        <strong>Continuous Innovation and Updates:</strong> Our commitment to innovation means that the app will evolve with the changing financial landscape. Regular updates will introduce new features, tools, and resources to meet emerging financial needs.
+    </p>
+
+    <p>
+        <strong>Security and Trust:</strong> Security is paramount. We prioritize the protection of user data and financial information through robust encryption and privacy measures. Users can trust our app as a secure and reliable platform for managing their financial affairs.
+    </p>
+{% endblock %}
