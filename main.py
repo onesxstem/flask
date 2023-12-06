@@ -1,13 +1,11 @@
 from flask import Flask, request, render_template
-from ProjectX import (
-    get_adjusted_income,
-    get_income_tax,
-)
+from ProjectX import get_adjusted_income, get_income_tax
+import os
 
 app = Flask(__name__)
 
-@app.route('/form', methods=['GET', 'POST'])
-def form():
+@app.route('/calculator', methods=['GET', 'POST'])
+def calculator():
     if request.method == 'POST':
         try:
         
@@ -160,13 +158,47 @@ def form():
 
         except ValueError:
             error_message = "Invalid input. Please enter valid numeric values."
-            return render_template('index.html', error_message=error_message)
+            return render_template('calculator.html', error_message=error_message)
 
-    return render_template('index.html')
+    return render_template('calculator.html')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/articles')
+def articles():
+    return render_template('articles.html')
+
+@app.route('/articles/<string:article_id>')
+def article(article_id):
+    # Assuming your HTML files are stored in a folder named 'templates'
+    # and there is a subfolder named 'articles'
+    article_path = f'articles/{article_id}.html'
+
+    try:
+        with open(article_path, 'r', encoding='utf-8') as article_file:
+            article_content = article_file.read()
+            return render_template('articles.html', article_content=article_content)
+    except FileNotFoundError:
+        error_message = "Article not found."
+        return render_template('articles.html', article_content=error_message)
+
+@app.route('/store')
+def store():
+    return render_template('store.html')
+
+@app.route('/mobile_app')
+def mobile_app():
+    return render_template('mobile_app.html')
+
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
+
+@app.route('/contact_us')
+def contact_us():
+    return render_template('contact_us.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
