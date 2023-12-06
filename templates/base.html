@@ -5,21 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}MxMonex{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Bootstrap JS dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Custom Style -->
+    <style>
+        main {
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('calculator') }}">Calculators</a></li>
-                <li><a href="{{ url_for('articles') }}">Articles</a></li>
-                <li><a href="{{ url_for('store') }}">Store</a></li>
-                <li><a href="{{ url_for('mobile_app') }}">Mobile App</a></li>
-                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-                <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-light">
+            <a class="navbar-brand" href="#">MxMonex</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('calculator') }}">Calculators</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('articles') }}">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('store') }}">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('mobile_app') }}">Mobile App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
+                    </li>
             </ul>
         </nav>
     </header>
@@ -32,6 +73,5 @@
         <p>&copy; 2023 MxMonex. All rights reserved.</p>
     </footer>
 
-    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
-</body>
+    </body>
 </html>
