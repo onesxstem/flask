@@ -4,6 +4,13 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+/* Reset styles for unordered lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 header {
     background-color: #333;
     padding: 10px 0;
@@ -42,4 +49,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
