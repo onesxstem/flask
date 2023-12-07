@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, abort
 from ProjectX import get_adjusted_income, get_income_tax
 import os
 
@@ -219,18 +219,18 @@ def index():
 def articles():
     return render_template('articles.html')
 
-@app.route('/articles/<string:article_id>')
+@app.route('/article/<article_id>')
 def article(article_id):
-    article_path = f'articles/{article_id}.html'
-
-    try:
-        with open(article_path, 'r', encoding='utf-8') as article_file:
-            article_content = article_file.read()
-            return render_template('articles.html', article_content=article_content)
-    except FileNotFoundError:
-        error_message = "Article not found."
-        return render_template('articles.html', article_content=error_message)
-
+    if article_id == 'article_one':
+        # Assuming you have an 'article_one.html' template in your templates folder
+        return render_template('article_one.html')
+    elif article_id == 'article_two':
+        # Assuming you have an 'article_two.html' template in your templates folder
+        return render_template('article_two.html')
+    else:
+        # If the requested article_id doesn't match, return a 404 error
+        abort(404)
+    
 @app.route('/store')
 def store():
     return render_template('store.html')
@@ -248,4 +248,4 @@ def contact_us():
     return render_template('contact_us.html')
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
