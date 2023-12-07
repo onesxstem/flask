@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles - MxMonex{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row">
+    <hr class="d-sm-none">
+    <div class="col-sm-8">
+      <h2>Unmasking Inflation: The Stealth Tax on Your Wealth</h2>
+      <h5>Exploring the concealed impact of inflation as a stealthy tax eroding your wealth. Dec 6, 2023</h5>
+      <div class="fakeimg">Image</div>
+      <p>
+		Inflation, often referred to as the silent thief, is a phenomenon that quietly erodes the purchasing power of your money over time. While it might 			not be as overt as traditional taxes, inflation stealthily diminishes the value of your wealth, affecting your financial well-being in ways that are 		 often overlooked.</p>
+	<hr class="d-sm-none">
+      <h2 class="mt-5">Unlocking the Mystery: Lesser-Known Taxes Impacting Your Finances</h2>
+      <h5>Delving into the intricate world of finance to unveil the impact of lesser-known taxes on your financial landscape. Dec 7, 2023</h5>
+      <div class="fakeimg">Image</div>
+      <p>
+      	Taxes are an inevitable part of our financial landscape, affecting individuals and businesses alike.
+        While some taxes are widely known and acknowledged, there are lesser-known taxes that can have a significant impact on your finances.
+        Understanding these hidden levies is crucial for making informed financial decisions and optimizing your overall tax strategy.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
