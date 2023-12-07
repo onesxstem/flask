@@ -56,7 +56,7 @@
             </div>
             
             <div>
-                <label for="tobacco_tax">weekly tobacco ($):</label>
+                <label for="tobacco_tax">weekly packs of cigarettes (#):</label>
                 <input type="number" name="tobacco_tax" required>
             </div>
             
@@ -69,6 +69,11 @@
                 <label for="uber_tax">monthly uber rides (#):</label>
                 <input type="number" name="uber_tax" required>
             </div>
+
+            <div>
+                <label for="uber_cost">monthly uber cost ($):</label>
+                <input type="number" name="uber_cost" required>
+            </div>
             
             <div>
                 <label for="weed_tax">monthly weed consumption (oz.):</label>
@@ -76,20 +81,40 @@
             </div>
             
             <div>
+                <label for="weed_cost">monthly weed cost ($):</label>
+                <input type="number" name="weed_cost" required>
+            </div>
+
+            <div>
                 <label for="vape_tax">monthly vape ($):</label>
                 <input type="number" name="vape_tax" required>
+            </div>
+            
+            <div>
+                <label for="food_sales_tax">monthly food ($):</label>
+                <input type="number" name="food_sales_tax" required>
             </div>
             
             <div>
                 <label for="flight_tax">annual flight tickets ($):</label>
                 <input type="number" name="flight_tax" required>
             </div>
+
+            <div>
+                <label for="gas_tax">weekly gas purchased ($):</label>
+                <input type="number" name="gas_tax" required>
+            </div>            
             
             <div>
                 <label for="tire_tax">annual tires purchased (#):</label>
                 <input type="number" name="tire_tax" required>
             </div>
             
+            <div>
+                <label for="tire_cost">annual tires cost ($):</label>
+                <input type="number" name="tire_cost" required>
+            </div>
+
             <div>
                 <label for="gun_tax">annual gun/ammo purchases ($):</label>
                 <input type="number" name="gun_tax" required>
@@ -185,7 +210,4 @@
         </form>
         <p id="result" style="display: none;"></p>
         <p id="error" style="color: red;"></p>
-    
-        <!-- Include the script.js file for your form calculations -->
-        <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
     {% endblock %}
