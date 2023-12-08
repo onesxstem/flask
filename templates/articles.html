@@ -9,8 +9,9 @@
     <div class="col-sm-8">
       <h2><a href="{{ url_for('article', article_id='article_three') }}">How the Wealthy Navigate Tax Liabilities</a></h2>
       <h5>Exploring sophisticated strategies involving stocks and loans, this article unveils how high-net-worth individuals strategically navigate tax liabilities for optimal financial efficiency. Dec 7, 2023</h5>
-      <div class="fakeimg">Image</div>
-      <p>
+      <div class="fakeimg">
+        <img src="{{ url_for('static', filename='images/stocks.jpg') }}" alt="Stocks" style="width: 100%; height: auto;">
+     </div>
         The intricate world of taxation has become a focal point in discussions surrounding the financial practices of high-net-worth individuals.
         Among the array of strategies employed, the use of stocks and loans stands out as a sophisticated approach to optimizing tax efficiency.
         In this exploration, we will delve into specific examples, highlighting how the wealthy leverage these financial tools to minimize tax payments.
@@ -19,7 +20,9 @@
 
       <h2><a href="{{ url_for('article', article_id='article_two') }}">Lesser-Known Taxes Impacting Your Finances</a></h2>
       <h5>Delving into the intricate world of finance to unveil the impact of lesser-known taxes on your financial landscape. Dec 6, 2023</h5>
-      <div class="fakeimg">Image</div>
+      <div class="fakeimg">
+        <img src="{{ url_for('static', filename='images/taxes.jpg') }}" alt="Taxes" style="width: 100%; height: auto;">
+     </div>
       <p>
         Taxes are an inevitable part of our financial landscape, affecting individuals and businesses alike.
         While some taxes are widely known and acknowledged, there are lesser-known taxes that can have a significant impact on your finances.
@@ -29,7 +32,9 @@
 
       <h2><a href="{{ url_for('article', article_id='article_one') }}">Unmasking Inflation: The Stealth Tax on Your Wealth</a></h2>
       <h5>Exploring the concealed impact of inflation as a stealthy tax eroding your wealth. Dec 5, 2023</h5>
-      <div class="fakeimg">Image</div>
+      <div class="fakeimg">
+        <img src="{{ url_for('static', filename='images/inflation.jpg') }}" alt="Inflation" style="width: 100%; height: auto;">
+     </div>
       <p>
         Inflation, often referred to as the silent thief, is a phenomenon that quietly erodes the purchasing power of your money over time.
         While it might not be as overt as traditional taxes, inflation stealthily diminishes the value of your wealth, affecting your financial well-being in ways that are often overlooked.
