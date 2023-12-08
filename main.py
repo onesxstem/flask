@@ -222,13 +222,12 @@ def articles():
 @app.route('/article/<article_id>')
 def article(article_id):
     if article_id == 'article_one':
-        # Assuming you have an 'article_one.html' template in your templates folder
         return render_template('article_one.html')
     elif article_id == 'article_two':
-        # Assuming you have an 'article_two.html' template in your templates folder
         return render_template('article_two.html')
+    elif article_id == 'article_three':
+        return render_template('article_three.html')
     else:
-        # If the requested article_id doesn't match, return a 404 error
         abort(404)
     
 @app.route('/store')
