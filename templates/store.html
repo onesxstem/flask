@@ -6,7 +6,21 @@
 {% block content %}
     <section class="coming-soon">
         <h2>Exciting Things Are Coming Soon!</h2>
-        <p>We're working on something awesome for our store. Stay tuned for exclusive products and fantastic deals.</p>
+        <div class="store-container">
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/logo_coaster.png') }}" alt="Product 1" class="img-fluid">
+              <p>Logo Coasters</p>
+            </div>
+          
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/logo_coaster1.png') }}" alt="Product 2" class="img-fluid">
+              <p>Logo Coasters</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/logo_sticker.png') }}" alt="Product 3" class="img-fluid">
+                <p>Logo Stickers</p>
+              </div>
+        <p>We're working on our store. Stay tuned for exclusive products and fantastic deals.</p>
         <p>Thank you for your patience and support!</p>
     </section>
 {% endblock %}
