@@ -1,5 +1,5 @@
 def get_adjusted_income(income):
-    inflation_rate = 1 - .02
+    inflation_rate = 1 - .0314
     adjusted_income = income * inflation_rate
     return adjusted_income
 
