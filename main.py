@@ -227,6 +227,8 @@ def article(article_id):
         return render_template('article_two.html')
     elif article_id == 'article_three':
         return render_template('article_three.html')
+    elif article_id == 'article_four':
+        return render_template('article_four.html')
     else:
         abort(404)
     
