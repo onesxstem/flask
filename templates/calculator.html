@@ -10,198 +10,265 @@
     <form method="post" action="{{ url_for('calculator') }}" onsubmit="calculateAdjustedIncome(); return false;">
 
             <div>
-                <label for="annual_income">annual gross income ($):</label>
+                <label for="relationship_status">Relationship Status:</label>
+                <select name="relationship_status" id="relationship_status">
+                <option value="Single">Single</option>
+                <option value="Married Filing Jointly">Married Filing Jointly</option>
+                <option value="Married Filing Separately">Married Filing Separately</option>
+                <option value="Head of Household">Head of Household</option>
+                <option value="Widow(er)">Qualifying Widow(er) With Dependent Child</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="state">State:</label>
+                <select name="state" id="state">
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="annual_income">Annual Gross Income ($):</label>
                 <input type="number" name="annual_income" required>                
             </div>
 
             
             <div>
-                <label for="capital_gain_tax">annual capital gain amount ($):</label>
+                <label for="capital_gain_tax">Annual Capital Gain ($):</label>
                 <input type="number" name="capital_gain_tax" required>
             </div>
-            
+
             <div>
-                <label for="pre_tax_savings">annual pre-tax savings ($):</label>
+                <label for="pre_tax_savings">Annual Pre-tax Savings ($):</label>
                 <input type="number" name="pre_tax_savings" required>
             </div>
             
             <div>
-                <label for="post_tax_savings">annual post-tax savings ($):</label>
+                <label for="post_tax_savings">Annual Post-tax Savings ($):</label>
                 <input type="number" name="post_tax_savings" required>
             </div>
             
             <div>
-                <label for="property_tax">annual property tax ($):</label>
+                <label for="property_tax">Annual Property Tax ($):</label>
                 <input type="number" name="property_tax" required>
             </div>
             
             <div>
-                <label for="car_rental_tax">annual car_rental spent ($):</label>
+                <label for="car_rental_tax">Annual Car Rental Spent ($):</label>
                 <input type="number" name="car_rental_tax" required>
             </div>
             
             <div>
-                <label for="insurance_tax">monthly insurance bills ($):</label>
+                <label for="insurance_tax">Monthly Insurance Bills ($):</label>
                 <input type="number" name="insurance_tax" required>
             </div>
             
             <div>
-                <label for="utility_tax">monthly utility bills ($):</label>
+                <label for="utility_tax">Monthly Utility Bills ($):</label>
                 <input type="number" name="utility_tax" required>
             </div>
             
             <div>
-                <label for="hotel_tax">annual hotel purchases ($):</label>
+                <label for="hotel_tax">Annual Hotel Purchases ($):</label>
                 <input type="number" name="hotel_tax" required>
             </div>
             
             <div>
-                <label for="tobacco_tax">weekly packs of cigarettes (#):</label>
+                <label for="tobacco_tax">Weekly Packs of Cigarettes (#):</label>
                 <input type="number" name="tobacco_tax" required>
             </div>
             
             <div>
-                <label for="alcohol_tax">weekly alcohol ($):</label>
+                <label for="alcohol_tax">Weekly Alcohol ($):</label>
                 <input type="number" name="alcohol_tax" required>
             </div>
             
             <div>
-                <label for="uber_tax">monthly uber rides (#):</label>
+                <label for="uber_tax">Monthly Uber Rides (#):</label>
                 <input type="number" name="uber_tax" required>
             </div>
-
+            
             <div>
-                <label for="uber_cost">monthly uber cost ($):</label>
+                <label for="uber_cost">Monthly Uber Cost ($):</label>
                 <input type="number" name="uber_cost" required>
             </div>
             
             <div>
-                <label for="weed_tax">monthly weed consumption (oz.):</label>
+                <label for="weed_tax">Monthly Weed Consumption (oz.):</label>
                 <input type="number" name="weed_tax" required>
             </div>
             
             <div>
-                <label for="weed_cost">monthly weed cost ($):</label>
+                <label for="weed_cost">Monthly Weed Cost ($):</label>
                 <input type="number" name="weed_cost" required>
             </div>
 
             <div>
-                <label for="vape_tax">monthly vape ($):</label>
+                <label for="vape_tax">Monthly Vape Cost ($):</label>
                 <input type="number" name="vape_tax" required>
             </div>
             
             <div>
-                <label for="food_sales_tax">monthly food ($):</label>
+                <label for="food_sales_tax">Monthly Food Spending ($):</label>
                 <input type="number" name="food_sales_tax" required>
             </div>
             
             <div>
-                <label for="flight_tax">annual flight tickets ($):</label>
+                <label for="flight_tax">Annual Flight Tickets Cost ($):</label>
                 <input type="number" name="flight_tax" required>
             </div>
-
+            
             <div>
-                <label for="gas_tax">weekly gas purchased ($):</label>
+                <label for="gas_tax">Weekly Gas Purchased ($):</label>
                 <input type="number" name="gas_tax" required>
             </div>            
             
             <div>
-                <label for="tire_tax">annual tires purchased (#):</label>
+                <label for="tire_tax">Annual Tires Purchased (#):</label>
                 <input type="number" name="tire_tax" required>
             </div>
             
             <div>
-                <label for="tire_cost">annual tires cost ($):</label>
+                <label for="tire_cost">Annual Tires Cost ($):</label>
                 <input type="number" name="tire_cost" required>
             </div>
-
+            
             <div>
-                <label for="gun_tax">annual gun/ammo purchases ($):</label>
+                <label for="gun_tax">Annual Gun/Ammo Purchases ($):</label>
                 <input type="number" name="gun_tax" required>
             </div>
             
             <div>
-                <label for="cell_tax">monthly cell bill ($):</label>
+                <label for="cell_tax">Monthly Cell Phone Bill ($):</label>
                 <input type="number" name="cell_tax" required>
             </div>
             
             <div>
-                <label for="toll_tax">monthly toll spent ($):</label>
+                <label for="toll_tax">Monthly Toll Spending ($):</label>
                 <input type="number" name="toll_tax" required>
             </div>
             
             <div>
-                <label for="vehicle_reg_tax">annual vehicle registration ($):</label>
+                <label for="vehicle_reg_tax">Annual Vehicle Registration ($):</label>
                 <input type="number" name="vehicle_reg_tax" required>
             </div>
             
             <div>
-                <label for="park_tax">annual national park spent ($):</label>
+                <label for="park_tax">Annual National Park Spending ($):</label>
                 <input type="number" name="park_tax" required>
             </div>
             
             <div>
-                <label for="tuition_tax">annual tuition spent ($):</label>
+                <label for="tuition_tax">Annual Tuition Spending ($):</label>
                 <input type="number" name="tuition_tax" required>
             </div>
             
             <div>
-                <label for="early_term_tax">annual early termination fees ($):</label>
+                <label for="early_term_tax">Annual Early Termination Fees ($):</label>
                 <input type="number" name="early_term_tax" required>
             </div>
             
             <div>
-                <label for="late_tax">annual late fees ($):</label>
+                <label for="late_tax">Annual Late Fees ($):</label>
                 <input type="number" name="late_tax" required>
             </div>
             
             <div>
-                <label for="event_ticket_tax">annual event tickets spent ($):</label>
+                <label for="event_ticket_tax">Annual Event Tickets Spending ($):</label>
                 <input type="number" name="event_ticket_tax" required>
             </div>
             
             <div>
-                <label for="closing_tax">annual closing fees ($):</label>
+                <label for="closing_tax">Annual Closing Fees ($):</label>
                 <input type="number" name="closing_tax" required>
             </div>
             
             <div>
-                <label for="hoa_tax">monthly hoa fee ($):</label>
+                <label for="hoa_tax">Monthly HOA Fee ($):</label>
                 <input type="number" name="hoa_tax" required>
             </div>
             
             <div>
-                <label for="pet_tax">monthly pet fees ($):</label>
+                <label for="pet_tax">Monthly Pet Fees ($):</label>
                 <input type="number" name="pet_tax" required>
             </div>
             
             <div>
-                <label for="soda_tax">daily soda intake (oz.):</label>
+                <label for="soda_tax">Daily Soda Intake (oz.):</label>
                 <input type="number" name="soda_tax" required>
             </div>
             
             <div>
-                <label for="atm_tax">monthly atm visits (#):</label>
+                <label for="atm_tax">Monthly ATM Visits (#):</label>
                 <input type="number" name="atm_tax" required>
             </div>
             
             <div>
-                <label for="realty_transfer_tax">annual realty transfer fees ($):</label>
+                <label for="realty_transfer_tax">Annual Realty Transfer Fees ($):</label>
                 <input type="number" name="realty_transfer_tax" required>
             </div>
             
             <div>
-                <label for="insuff_funds_tax">annual insufficient funds fee ($):</label>
+                <label for="insuff_funds_tax">Annual Insufficient Funds Fee ($):</label>
                 <input type="number" name="insuff_funds_tax" required>
             </div>
             
             <div>
-                <label for="non_refundable_deposit_tax">annual non-refundable deposit fees ($):</label>
+                <label for="non_refundable_deposit_tax">Annual Non-Refundable Deposit Fees ($):</label>
                 <input type="number" name="non_refundable_deposit_tax" required>
             </div>
             
             <div>
-                <label for="parking_tax">annual vehicle parking fee ($):</label>
+                <label for="parking_tax">Annual Vehicle Parking Fee ($):</label>
                 <input type="number" name="parking_tax" required>
             </div>
             
