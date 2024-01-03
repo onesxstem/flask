@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, abort
-from ProjectX import get_adjusted_income, get_income_tax
-import os
+from calculator import get_adjusted_income, get_income_tax
 
 app = Flask(__name__)
 
@@ -8,7 +7,8 @@ app = Flask(__name__)
 def calculator():
     if request.method == 'POST':
         try:
-        
+            relationship_status = request.form['relationship_status']
+            state = request.form['state']
             annual_income = float(request.form['annual_income'])
             pre_tax_savings = float(request.form['pre_tax_savings'])
             post_tax_savings = float(request.form['post_tax_savings'])
@@ -165,7 +165,7 @@ def calculator():
             ]
             # Call functions to calculate taxes
             adjusted_income = get_adjusted_income(annual_income)
-            federal_tax, state_tax, fica_tax, sdi_sui_fli_tax = get_income_tax(annual_income, pre_tax_savings)
+            federal_tax, state_tax, fica_tax, sdi_sui_fli_tax = get_income_tax(annual_income, pre_tax_savings, relationship_status)
             
             #fix sodatax
             total_spent = (
@@ -200,10 +200,11 @@ def calculator():
             total_expense = total_spent + federal_tax + state_tax + fica_tax + sdi_sui_fli_tax + capital_gain_tax
             whats_left = (total_income - total_savings - total_expense)
             
-            return render_template('result.html', federal_tax=federal_tax, state_tax=state_tax,
-                                   fica_tax=fica_tax, sdi_sui_fli_tax=sdi_sui_fli_tax,
-                                   total_income=total_income, total_savings=total_savings,
-                                   grand_total=grand_total, whats_left=whats_left,variable_list=variable_list,total_expense=total_expense)
+            return render_template('result.html', relationship_status=relationship_status, state=state,
+                           federal_tax=federal_tax, state_tax=state_tax,
+                           fica_tax=fica_tax, sdi_sui_fli_tax=sdi_sui_fli_tax, variable_list=variable_list,
+                           total_income=total_income, total_savings=total_savings,
+                           grand_total=grand_total, whats_left=whats_left, total_expense=total_expense)
 
         except ValueError:
             error_message = "Invalid input. Please enter valid numeric values."
