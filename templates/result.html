@@ -6,6 +6,8 @@
 {% block content %}
     <h2>Calculation Result</h2>
     
+    <p>Relationship Status: {{ relationship_status }}</p>
+    <p>State: {{ state }}</p>
     <p>Federal Tax: ${{ federal_tax|round(2) }}</p>
     <p>State Tax: ${{ state_tax|round(2) }}</p>
     <p>FICA Tax: ${{ fica_tax|round(2) }}</p>
