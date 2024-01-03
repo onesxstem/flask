@@ -1,6 +1,5 @@
 # calculator.py
 
-from data import relationship_statuses, states
 from tax_calculations import tax_brackets
 from states import calculate_state_tax, state_tax_functions
 
