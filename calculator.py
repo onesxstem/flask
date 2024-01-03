@@ -1,5 +1,8 @@
+# calculator.py
+
 from data import relationship_statuses, states
 from tax_calculations import tax_brackets
+from states import calculate_state_tax, state_tax_functions
 
 STANDARD_DEDUCTIONS = {
     'Single': 14600,
@@ -20,7 +23,7 @@ FEDERAL_TAX_LIMITS = {
 FEDERAL_TAX_BASES = [0, 1160, 5426, 17168.50, 39110.50, 55678.50, 183647.25]
 
 def get_adjusted_income(income):
-    inflation_rate = 1 - .0314
+    inflation_rate = 1 - 0.0314
     adjusted_income = income * inflation_rate
     return adjusted_income
 
@@ -46,23 +49,6 @@ def calculate_federal_tax(income, pre_tax_savings, relationship_status):
 
     return max(0, tax)  # Ensure the tax is non-negative
 
-def calculate_state_tax(income):
-    if income <= 20000:
-        state_tax = 0.014 * income
-    elif income <= 35000:
-        state_tax = 0.0175 * (income) - 70
-    elif income <= 40000:
-        state_tax = 0.035 * (income) - 682.50
-    elif income <= 75000:
-        state_tax = 0.0553 * (income) - 1492.50
-    elif income <= 500000:
-        state_tax = 0.0637 * (income) - 2126.25
-    elif income <= 1000000:
-        state_tax = 0.0897 * (income) - 15126.25
-    else:
-        state_tax = 0.1075 * (income) - 32926.25
-    return state_tax
-
 def calculate_fica_tax(income):
     # Define FICA tax rate (Social Security and Medicare).
     fica_tax_rate = 0.0765  # As of 2021, this was the combined Social Security and Medicare rate.
@@ -77,9 +63,13 @@ def calculate_sdi_sui_fli_tax(income):
     sdi_sui_fli_tax_rate = sdi_tax_rate + sui_tax_rate + fli_tax_rate
     return sdi_sui_fli_tax_rate
 
-def get_income_tax(income, pre_tax_savings, relationship_status):
-    federal_tax = calculate_federal_tax(income, pre_tax_savings, relationship_status)
-    state_tax = calculate_state_tax(income)
-    fica_tax = calculate_fica_tax(income)
-    sdi_sui_fli_tax = calculate_sdi_sui_fli_tax(income)
-    return federal_tax, state_tax, fica_tax, sdi_sui_fli_tax
+def get_income_tax(income, pre_tax_savings, relationship_status, state):
+    state_tax_function = state_tax_functions.get(state)
+    
+    if state_tax_function:
+        tax_info = state_tax_function(income)
+        federal_tax = calculate_federal_tax(income, pre_tax_savings, relationship_status)
+        state_tax = calculate_state_tax(income, tax_info, state)
+        fica_tax = calculate_fica_tax(income)
+        sdi_sui_fli_tax = calculate_sdi_sui_fli_tax(income)
+        return federal_tax, state_tax, fica_tax, sdi_sui_fli_tax,

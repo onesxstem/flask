@@ -165,7 +165,7 @@ def calculator():
             ]
             # Call functions to calculate taxes
             adjusted_income = get_adjusted_income(annual_income)
-            federal_tax, state_tax, fica_tax, sdi_sui_fli_tax = get_income_tax(annual_income, pre_tax_savings, relationship_status)
+            federal_tax, state_tax, fica_tax, sdi_sui_fli_tax = get_income_tax(annual_income, pre_tax_savings, relationship_status, state)
             
             #fix sodatax
             total_spent = (
