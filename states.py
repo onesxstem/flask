@@ -32,9 +32,9 @@ def calculate_state_tax_arkansas(income):
 
 def calculate_state_tax_colorado(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.044],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Colorado')
 
@@ -84,25 +84,25 @@ def calculate_state_tax_hawaii(income):
 
 def calculate_state_tax_idaho(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.058],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Idaho')
 
 def calculate_state_tax_illinois(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0495],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Illinois')
 
 def calculate_state_tax_indiana(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0323],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Indiana')
 
@@ -124,7 +124,7 @@ def calculate_state_tax_kansas(income):
 
 def calculate_state_tax_kentucky(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
+        'rates': [0.0500],
         'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
         'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
     }
@@ -156,17 +156,17 @@ def calculate_state_tax_maryland(income):
 
 def calculate_state_tax_massachusetts(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0500],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Massachusetts')
 
 def calculate_state_tax_michigan(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0425],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Michigan')
 
@@ -180,9 +180,9 @@ def calculate_state_tax_minnesota(income):
 
 def calculate_state_tax_mississippi(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0500],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Mississippi')
 
@@ -244,17 +244,17 @@ def calculate_state_tax_new_york(income):
 
 def calculate_state_tax_north_carolina(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0499],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'North Carolina')
 
 def calculate_state_tax_north_dakota(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0475],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'North Dakota')
 
@@ -284,9 +284,9 @@ def calculate_state_tax_oregon(income):
 
 def calculate_state_tax_pennsylvania(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0307],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Pennsylvania')
 
@@ -320,9 +320,9 @@ def calculate_state_tax_texas(income):
 
 def calculate_state_tax_utah(income):
     tax_info = {
-        'rates': [0.01, 0.02, 0.04, 0.06, 0.08, 0.093, 0.103, 0.113, 0.123],
-        'brackets': [8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980],
-        'deductions': [0, 170, 753, 1296, 2136, 7270, 11039, 26944]
+        'rates': [0.0485],
+        'brackets': [],
+        'deductions': [0]
     }
     return calculate_state_tax(income, tax_info, 'Utah')
 
