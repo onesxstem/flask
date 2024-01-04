@@ -7,7 +7,7 @@
     <h2>Tax Calculator</h2>
     <p>Explore our comprehensive income calculator, encompassing purchasing power, a myriad of taxes, and often-overlooked expenses, to provide you with a detailed estimate of your annual income.</p>
 
-    <form method="post" action="{{ url_for('calculator') }}" onsubmit="calculateAdjustedIncome(); return false;">
+    <form method="post" action="{{ url_for('calculator') }}">
 
             <div>
                 <label for="relationship_status">Relationship Status:</label>
@@ -97,6 +97,16 @@
                 <input type="number" name="post_tax_savings" required>
             </div>
             
+            <div>
+                <label for="donation_tax">Annual Donations ($):</label>
+                <input type="number" name="donation_tax" required>
+            </div>
+            
+            <div>
+                <label for="housing">Monthly Housing  ($):</label>
+                <input type="number" name="housing" required>
+            </div>
+
             <div>
                 <label for="property_tax">Annual Property Tax ($):</label>
                 <input type="number" name="property_tax" required>
@@ -208,8 +218,8 @@
             </div>
             
             <div>
-                <label for="tuition_tax">Annual Tuition Spending ($):</label>
-                <input type="number" name="tuition_tax" required>
+                <label for="education_tax">Educaton Expenses ($):</label>
+                <input type="number" name="education_tax" required>
             </div>
             
             <div>
@@ -271,7 +281,11 @@
                 <label for="parking_tax">Annual Vehicle Parking Fee ($):</label>
                 <input type="number" name="parking_tax" required>
             </div>
-            
+
+            <div>
+                <label for="childcare">Monthly Childcare  ($):</label>
+                <input type="number" name="childcare" required>
+            </div>
 
             <button type="submit">Calculate</button>
         </form>
