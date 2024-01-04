@@ -80,9 +80,9 @@ def calculator():
             park_tax_rate = 1.0
             park_tax = park_tax_annual * park_tax_rate
 
-            tuition_tax_annual = float(request.form['tuition_tax'])
-            tuition_tax_rate = 0.18
-            tuition_tax = tuition_tax_annual * tuition_tax_rate
+            education_tax_annual = float(request.form['education_tax'])
+            education_tax_rate = 0.18
+            education_tax = education_tax_annual * education_tax_rate
 
             event_ticket_annual = float(request.form['event_ticket_tax'])
             event_ticket_fee = 0.09
@@ -122,7 +122,14 @@ def calculator():
 
             uber_cost_monthly = float(request.form['uber_cost'])
             weed_cost_monthly = float(request.form['weed_cost'])
-            tire_cost_annual =  float(request.form['tire_cost'])
+            tire_cost_annual = float(request.form['tire_cost'])
+            donation_tax = float(request.form['donation_tax'])
+
+            childcare_monthly = float(request.form['childcare'])
+            childcare = childcare_monthly * 12
+
+            housing_monthly = float(request.form['housing'])
+            housing = housing_monthly * 12
             
             variable_list = [
             ('Weed Tax', weed_tax),
@@ -140,7 +147,7 @@ def calculator():
             ('Car Rental Tax', car_rental_tax),
             ('Utility Tax', utility_tax),
             ('Park Tax', park_tax),
-            ('Tuition Tax', tuition_tax),
+            ('Education Tax', education_tax),
             ('Event Ticket Tax', event_ticket_tax),
             ('Closing Fee Tax', closing_fee_tax),
             ('HOA Tax', hoa_tax),
@@ -160,7 +167,10 @@ def calculator():
             ('Food Sales Tax', food_sales_tax),
             ('Uber Cost', uber_cost_monthly),
             ('Weed Cost', weed_cost_monthly),
-            ('Tire Cost', tire_cost_annual)
+            ('Tire Cost', tire_cost_annual),
+            ('Donation Tax', donation_tax),
+            ('Childcare', childcare),
+            ('Housing', housing)
 
             ]
             # Call functions to calculate taxes
@@ -172,10 +182,10 @@ def calculator():
             property_tax + car_rental_spending_annual + (insurance_monthly * 12) + (utility_spending_monthly * 12) +
             hotel_spending_annual + (tobacco_packs_weekly * 52) + (alcohol_spending_weekly * 52) + (weed_cost_monthly * 12) +
             (vape_smoking_monthly * 12) + flight_travel_annual + (gas_per_week * 52) + gun_ammo_buy_annual + tire_cost_annual +
-            (cell_phone_monthly * 12) + (toll_spending_monthly * 12) + vehicle_reg_tax + park_tax_annual + tuition_tax_annual +
-            early_term_tax + late_fee_tax + event_ticket_annual + closing_fee_tax + (uber_cost_monthly * 12) +
-            (hoa_fee_monthly * 12) + (pet_fee_monthly * 12) + (atm_visit_monthly * atm_fee) + realty_transfer_tax +
-            non_refundable_deposit_tax + parking_tax + insuff_funds_annual + event_ticket_annual + (food_monthly * 12)
+            (cell_phone_monthly * 12) + (toll_spending_monthly * 12) + vehicle_reg_tax + park_tax_annual + education_tax_annual +
+            early_term_tax + late_fee_tax + event_ticket_annual + closing_fee_tax + (uber_cost_monthly * 12) + (childcare) +
+            (hoa_fee_monthly * 12) + (pet_fee_monthly * 12) + (atm_visit_monthly * atm_fee) + realty_transfer_tax + housing +
+            non_refundable_deposit_tax + parking_tax + insuff_funds_annual + event_ticket_annual + (food_monthly * 12) + donation_tax
             
             )
             #fix sodatax
@@ -183,7 +193,7 @@ def calculator():
                 capital_gain_tax, car_rental_tax, insurance_tax, utility_tax,
                 hotel_tax, tobacco_tax, alcohol_tax, vape_tax, property_tax, tire_tax,
                 flight_tax, gun_tax, cell_tax, toll_tax, vehicle_reg_tax, park_tax,
-                tuition_tax, early_term_tax, event_ticket_tax, hoa_tax, food_sales_tax,
+                education_tax, early_term_tax, event_ticket_tax, hoa_tax, food_sales_tax,
                 pet_tax, realty_transfer_tax, insuff_funds_annual, gas_tax, uber_tax, weed_tax,
                 non_refundable_deposit_tax, parking_tax, late_fee_tax, closing_fee_annual, atm_fee_tax
             )
