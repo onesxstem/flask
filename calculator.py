@@ -1,7 +1,8 @@
 # calculator.py
 
 from tax_calculations import tax_brackets
-from states import calculate_state_tax, state_tax_functions
+from states import calculate_state_tax, state_tax_function
+
 
 STANDARD_DEDUCTIONS = {
     'Single': 14600,
@@ -63,7 +64,7 @@ def calculate_sdi_sui_fli_tax(income):
     return sdi_sui_fli_tax_rate
 
 def get_income_tax(income, pre_tax_savings, relationship_status, state):
-    state_tax_function = state_tax_functions.get(state)
+    state_tax_function = state_tax_function.get(state)
     
     if state_tax_function:
         tax_info = state_tax_function(income)
@@ -71,4 +72,4 @@ def get_income_tax(income, pre_tax_savings, relationship_status, state):
         state_tax = calculate_state_tax(income, tax_info, state)
         fica_tax = calculate_fica_tax(income)
         sdi_sui_fli_tax = calculate_sdi_sui_fli_tax(income)
-        return federal_tax, state_tax, fica_tax, sdi_sui_fli_tax,
+        return federal_tax, state_tax, fica_tax, sdi_sui_fli_tax

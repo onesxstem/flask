@@ -1,5 +1,7 @@
+#main.py
 from flask import Flask, request, render_template, abort
-from calculator import get_adjusted_income, get_income_tax
+from calculator import get_adjusted_income, calculate_federal_tax, calculate_state_tax, calculate_fica_tax, calculate_sdi_sui_fli_tax
+from states import state_tax_function
 
 app = Flask(__name__)
 
@@ -173,9 +175,13 @@ def calculator():
             ('Housing', housing)
 
             ]
+            
             # Call functions to calculate taxes
             adjusted_income = get_adjusted_income(annual_income)
-            federal_tax, state_tax, fica_tax, sdi_sui_fli_tax = get_income_tax(annual_income, pre_tax_savings, relationship_status, state)
+            federal_tax = calculate_federal_tax(annual_income, pre_tax_savings, relationship_status)
+            state_tax = state_tax_function(annual_income, state)
+            fica_tax = calculate_fica_tax(annual_income)
+            sdi_sui_fli_tax = calculate_sdi_sui_fli_tax(annual_income)
             
             #fix sodatax
             total_spent = (
