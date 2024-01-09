@@ -123,8 +123,11 @@ def calculator():
             food_sales_tax = food_monthly * sales_tax_rate
 
             uber_cost_monthly = float(request.form['uber_cost'])
+            
             weed_cost_monthly = float(request.form['weed_cost'])
+            
             tire_cost_annual = float(request.form['tire_cost'])
+            
             donation_tax = float(request.form['donation_tax'])
 
             childcare_monthly = float(request.form['childcare'])
@@ -133,6 +136,24 @@ def calculator():
             housing_monthly = float(request.form['housing'])
             housing = housing_monthly * 12
             
+            subscriptions_monthly = float(request.form['subscriptions'])
+            subscriptions = subscriptions_monthly * 12
+
+            entertainment_monthly = float(request.form['entertainment'])
+            entertainment = entertainment_monthly * 12
+
+            personal_care_monthly = float(request.form['personal_care'])
+            personal_care = personal_care_monthly * 12
+
+            transportation_mx_annual= float(request.form['transportation_maintenance'])
+
+            clothing_annual= float(request.form['clothing'])
+
+            home_mx_annual= float(request.form['home_maintenance'])
+
+            misc_monthly = float(request.form['miscellaneous'])
+            misc = misc_monthly * 12
+
             variable_list = [
             ('Weed Tax', weed_tax),
             ('Tire Tax', tire_tax),
@@ -172,7 +193,14 @@ def calculator():
             ('Tire Cost', tire_cost_annual),
             ('Donation Tax', donation_tax),
             ('Childcare', childcare),
-            ('Housing', housing)
+            ('Housing', housing),
+            ('Subscriptions', subscriptions),
+            ('House Maintenance', home_mx_annual),
+            ('Transportation Maintenance', transportation_mx_annual),
+            ('Entertainment', entertainment),
+            ('Miscellaneous', misc),
+            ('Personal Care', personal_care),
+            ('Clothing', clothing_annual)
 
             ]
             
@@ -185,12 +213,12 @@ def calculator():
             
             #fix sodatax
             total_spent = (
-            property_tax + car_rental_spending_annual + (insurance_monthly * 12) + (utility_spending_monthly * 12) +
-            hotel_spending_annual + (tobacco_packs_weekly * 52) + (alcohol_spending_weekly * 52) + (weed_cost_monthly * 12) +
-            (vape_smoking_monthly * 12) + flight_travel_annual + (gas_per_week * 52) + gun_ammo_buy_annual + tire_cost_annual +
-            (cell_phone_monthly * 12) + (toll_spending_monthly * 12) + vehicle_reg_tax + park_tax_annual + education_tax_annual +
-            early_term_tax + late_fee_tax + event_ticket_annual + closing_fee_tax + (uber_cost_monthly * 12) + (childcare) +
-            (hoa_fee_monthly * 12) + (pet_fee_monthly * 12) + (atm_visit_monthly * atm_fee) + realty_transfer_tax + housing +
+            property_tax + car_rental_spending_annual + (insurance_monthly * 12) + (utility_spending_monthly * 12) + realty_transfer_tax +
+            hotel_spending_annual + (tobacco_packs_weekly * 52) + (alcohol_spending_weekly * 52) + (weed_cost_monthly * 12) + housing +
+            (vape_smoking_monthly * 12) + flight_travel_annual + (gas_per_week * 52) + gun_ammo_buy_annual + tire_cost_annual + (subscriptions) +
+            (cell_phone_monthly * 12) + (toll_spending_monthly * 12) + vehicle_reg_tax + park_tax_annual + education_tax_annual + (entertainment) +
+            early_term_tax + late_fee_tax + event_ticket_annual + closing_fee_tax + (uber_cost_monthly * 12) + (childcare) + (personal_care) + (misc) +
+            (hoa_fee_monthly * 12) + (clothing_annual) + (home_mx_annual) + (transportation_mx_annual) + (pet_fee_monthly * 12) + (atm_visit_monthly * atm_fee) +
             non_refundable_deposit_tax + parking_tax + insuff_funds_annual + event_ticket_annual + (food_monthly * 12) + donation_tax
             
             )
