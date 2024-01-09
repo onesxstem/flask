@@ -19,11 +19,13 @@
     {% endfor %}
 
     <!-- Other tax calculations -->
-    <p>*Total Tax (inluding sales tax): ${{ grand_total|round(2) }}*</p>
-
-    <p>Total Income: ${{ total_income|round(2) }} (Adjusted For Inflation)</p>
+    <h2>Break Down</h2>
+    <p>Total Income: ${{ total_income|round(2) }} (adjusted for inflation)</p>
     <p>Total Savings: ${{ total_savings|round(2) }}</p>
-    <p>Total Expense (including tax): ${{ total_expense|round(2) }}</p>
+    <p>Total Tax (inluding sales tax): ${{ grand_total|round(2) }}</p>
+    <p>Total Expenses (including tax): ${{ total_expense|round(2) }}</p>
     <p>Total Left: ${{ whats_left|round(2) }}</p>
 {% endblock %}
+
+
 
