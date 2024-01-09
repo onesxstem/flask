@@ -50,9 +50,28 @@ def calculate_federal_tax(income, pre_tax_savings, relationship_status):
     return max(0, tax)  # Ensure the tax is non-negative
 
 def calculate_fica_tax(income):
-    # Define FICA tax rate (Social Security and Medicare).
-    fica_tax_rate = 0.0765  # As of 2021, this was the combined Social Security and Medicare rate.
-    return fica_tax_rate * income
+    # Define FICA tax rates (Social Security and Medicare).
+    social_security_rate = 0.062  # Social Security tax rate on the first $168,600.
+    medicare_rate = 0.0145  # Medicare tax rate.
+    additional_medicare_rate = 0.009  # Additional Medicare tax rate on earnings over $200,000 for single filers.
+
+    # Calculate Social Security tax (OASDI) on the first $168,600.
+    social_security_taxable_income = min(income, 168600)
+    social_security_tax = social_security_rate * social_security_taxable_income
+
+    # Calculate Medicare tax.
+    medicare_tax = medicare_rate * income
+
+    # Calculate regular FICA tax.
+    fica_tax = social_security_tax + medicare_tax
+
+    # Check if additional Medicare tax applies.
+    if income > 200000:
+        additional_medicare_taxable_income = income - 200000
+        additional_medicare_tax = additional_medicare_rate * additional_medicare_taxable_income
+        fica_tax += additional_medicare_tax
+
+    return fica_tax
 
 def calculate_sdi_sui_fli_tax(income):
     # Define SDI, SUI, and FLI tax rates.
