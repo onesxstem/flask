@@ -1,7 +1,7 @@
 #main.py
 from flask import Flask, request, render_template, abort
 from calculator import get_adjusted_income, calculate_federal_tax, calculate_state_tax, calculate_fica_tax, calculate_sdi_sui_fli_tax
-from states import state_tax_function
+from states import state_tax_function, state_sales_tax_rate
 
 app = Flask(__name__)
 
@@ -232,9 +232,10 @@ def calculator():
                 non_refundable_deposit_tax, parking_tax, late_fee_tax, closing_fee_annual, atm_fee_tax
             )
 
-            sales_tax = 0.06625 * (gun_ammo_buy_annual + car_rental_spending_annual + flight_travel_annual + (vape_smoking_monthly * 12) +
+            sales_tax_rate = state_sales_tax_rate(state)
+            sales_tax = sales_tax_rate * (gun_ammo_buy_annual + car_rental_spending_annual + flight_travel_annual + (vape_smoking_monthly * 12) +
                                    (tobacco_packs_weekly * 52) + event_ticket_annual + (weed_cost_monthly * 12) + (alcohol_spending_weekly * 52) +
-                                   tire_cost_annual
+                                   tire_cost_annual + personal_care + transportation_mx_annual + home_mx_annual
                                    
             )
 
@@ -245,7 +246,7 @@ def calculator():
             whats_left = (total_income - total_savings - total_expense)
             
             return render_template('result.html', relationship_status=relationship_status, state=state,
-                           federal_tax=federal_tax, state_tax=state_tax,
+                           federal_tax=federal_tax, state_tax=state_tax, sales_tax=sales_tax,
                            fica_tax=fica_tax, sdi_sui_fli_tax=sdi_sui_fli_tax, variable_list=variable_list,
                            total_income=total_income, total_savings=total_savings,
                            grand_total=grand_total, whats_left=whats_left, total_expense=total_expense)

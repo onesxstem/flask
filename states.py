@@ -457,3 +457,67 @@ def state_tax_function(income, state):
         return calculate_state_tax_wyoming(income)
     else:
         raise ValueError(f"No tax calculation available for the state '{state}'.")
+
+def state_sales_tax_rate(state):
+    state_sales_tax_rate = {
+    'alabama': 0.04,
+    'alaska': 0.05,
+    'arizona': 0.056,
+    'arkansas': 0.065,
+    'california': 0.0725,
+    'colorado': 0.029,
+    'connecticut': 0.0635,
+    'delaware': 0.00,
+    'florida': 0.06,
+    'georgia': 0.04,
+    'hawaii': 0.04,
+    'idaho': 0.06,
+    'illinois': 0.0625,
+    'indiana': 0.07,
+    'iowa': 0.06,
+    'kansas': 0.065,
+    'kentucky': 0.06,
+    'louisiana': 0.04,
+    'maine': 0.055,
+    'maryland': 0.06,
+    'massachusetts': 0.0625,
+    'michigan': 0.06,
+    'minnesota': 0.06875,
+    'mississippi': 0.07,
+    'missouri': 0.04225,
+    'montana': 0.00,
+    'nebraska': 0.055,
+    'nevada': 0.0685,
+    'new hampshire': 0.00,
+    'new jersey': 0.06625,
+    'new mexico': 0.05125,
+    'new york': 0.04,
+    'north carolina': 0.0475,
+    'north dakota': 0.05,
+    'ohio': 0.0575,
+    'oklahoma': 0.045,
+    'oregon': 0.00,
+    'pennsylvania': 0.06,
+    'rhode island': 0.07,
+    'south carolina': 0.06,
+    'south dakota': 0.045,
+    'tennessee': 0.07,
+    'texas': 0.0625,
+    'utah': 0.0485,
+    'vermont': 0.06,
+    'virginia': 0.043,
+    'washington': 0.065,
+    'west virginia': 0.06,
+    'wisconsin': 0.05,
+    'wyoming': 0.04,
+}
+
+    # Convert the state name to lowercase to make the comparison case-insensitive
+    state = state.lower()
+
+    # Check if the state has a corresponding sales tax rate
+    if state in state_sales_tax_rate:
+        # Return the sales tax rate for the selected state
+        return state_sales_tax_rate[state]
+    else:
+        raise ValueError(f"No sales tax rate available for the state '{state}'.")
