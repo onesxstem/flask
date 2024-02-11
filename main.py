@@ -5,6 +5,10 @@ from states import state_tax_function, state_sales_tax_rate
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('home.html')
+
 @app.route('/calculator', methods=['GET', 'POST'])
 def calculator():
     if request.method == 'POST':
@@ -204,14 +208,12 @@ def calculator():
 
             ]
             
-            # Call functions to calculate taxes
             adjusted_income = get_adjusted_income(annual_income)
             federal_tax = calculate_federal_tax(annual_income, pre_tax_savings, relationship_status)
             state_tax = state_tax_function(annual_income, state)
             fica_tax = calculate_fica_tax(annual_income)
             sdi_sui_fli_tax = calculate_sdi_sui_fli_tax(annual_income)
             
-            #fix sodatax
             total_spent = (
             property_tax + car_rental_spending_annual + (insurance_monthly * 12) + (utility_spending_monthly * 12) + realty_transfer_tax +
             hotel_spending_annual + (tobacco_packs_weekly * 52) + (alcohol_spending_weekly * 52) + (weed_cost_monthly * 12) + housing +
@@ -222,7 +224,7 @@ def calculator():
             non_refundable_deposit_tax + parking_tax + insuff_funds_annual + event_ticket_annual + (food_monthly * 12) + donation_tax
             
             )
-            #fix sodatax
+
             total_tax = (
                 capital_gain_tax, car_rental_tax, insurance_tax, utility_tax,
                 hotel_tax, tobacco_tax, alcohol_tax, vape_tax, property_tax, tire_tax,
@@ -257,31 +259,31 @@ def calculator():
 
     return render_template('calculator.html')
 
-@app.route('/')
-def index():
-    return render_template('home.html')
+@app.route('/quizzes')
+def main_quiz_page():
+    return render_template('quizzes.html')
 
 @app.route('/articles')
 def articles():
     return render_template('articles.html')
 
-@app.route('/article/<article_id>')
+@app.route('/articles/<article_id>')
 def article(article_id):
     if article_id == 'article_one':
-        return render_template('article_one.html')
+        return render_template('articles/article_one.html')
     elif article_id == 'article_two':
-        return render_template('article_two.html')
+        return render_template('articles/article_two.html')
     elif article_id == 'article_three':
-        return render_template('article_three.html')
+        return render_template('articles/article_three.html')
     elif article_id == 'article_four':
-        return render_template('article_four.html')
+        return render_template('articles/article_four.html')
     else:
         abort(404)
 
 @app.route('/stats')
 def stats():
     return render_template('stats.html')
-    
+
 @app.route('/store')
 def store():
     return render_template('store.html')
