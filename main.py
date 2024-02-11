@@ -277,6 +277,10 @@ def article(article_id):
         return render_template('article_four.html')
     else:
         abort(404)
+
+@app.route('/stats')
+def stats():
+    return render_template('stats.html')
     
 @app.route('/store')
 def store():
