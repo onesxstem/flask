@@ -6,12 +6,16 @@
 {% block content %}
 
     <title>Financial Statistics</title>
+    <!-- Add your CSS styles or link to an external stylesheet here -->
     <script>
         function showSection(sectionId) {
+            // Hide all sections
             var sections = document.querySelectorAll('section');
             sections.forEach(function(section) {
                 section.style.display = 'none';
             });
+
+            // Show the selected section
             var selectedSection = document.getElementById(sectionId);
             selectedSection.style.display = 'block';
         }
@@ -41,16 +45,16 @@
         <p>Welcome to our Financial Statistics page, designed to provide you with a comprehensive overview of key economic indicators and trends. Our goal is to deliver a clear and insightful picture of important financial topics affecting individuals and households.</p>
         <p>Explore the interactive chart below to visualize the dynamic trends in M1 and M2 money supply over time. This chart allows you to interact with the data and gain valuable insights into the liquidity and broader monetary conditions within the economy.</p>
         <p>Please note that the data presented here is based on the latest available information and is subject to change. We strive to keep the information up-to-date to provide you with the most relevant and accurate insights into the financial landscape.</p>
-        <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjjs&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+        <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjjs&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
     </section>
 
     <section id="housing">
         <h2>Housing Statistics</h2>
         <ul>
             <p>Home Sale Prices:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjxw&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjxw&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
             <p>Average Mortgage Rates:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1g9Bo&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1g9Bo&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
     </section>
 
@@ -58,9 +62,9 @@
         <h2>Income Statistics</h2>
         <ul>
             <p>Median Personal Salary:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1fvEm&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1fvEm&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
             <p>Federal Minimum Wage:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjuV&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjuV&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
     </section>
 
@@ -68,7 +72,7 @@
         <h2>Savings and Investments</h2>
         <ul>
             <p>Average Savings Rate:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1f4k4&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1f4k4&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
     </section>
 
@@ -76,9 +80,9 @@
         <h2>Debt Statistics</h2>
         <ul>
             <p>Federal Debt:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1cSNC&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1cSNC&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
             <p>Personal Consumer Spending:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eQnW&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eQnW&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
     </section>
 
@@ -94,15 +98,16 @@
         </ul>
     </section>
     
+
     <section id="crypto">
         <h2>Crypto Statistics</h2>
         <ul>
             <p>Bitcoin:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4w&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4w&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
             <p>Ethereum:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4z&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4z&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
             <p>Litecoin:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj51&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj51&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
     </section>
 
@@ -112,11 +117,13 @@
         <p>Methodology: Our approach involves collecting, aggregating, and analyzing the most recent and reliable data available from the mentioned sources. We aim to present accurate and up-to-date information on key financial metrics. It's important to note that while we strive for precision, the presented data may be subject to periodic revisions by the source providers.</p>
     </section>
     
+
     <footer>
         <p>Page last updated on 02/08/2024. This information is for informational purposes only. Please note that data may be subject to change.</p>
     </footer>
 
     <script>
+        // Show the introduction section by default
         showSection('introduction');
     </script>
 
