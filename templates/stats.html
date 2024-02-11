@@ -6,7 +6,6 @@
 {% block content %}
 
     <title>Financial Statistics</title>
-    <!-- Add your CSS styles or link to an external stylesheet here -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -14,8 +13,6 @@
             sections.forEach(function(section) {
                 section.style.display = 'none';
             });
-
-            // Show the selected section
             var selectedSection = document.getElementById(sectionId);
             selectedSection.style.display = 'block';
         }
@@ -62,7 +59,7 @@
         <h2>Income Statistics</h2>
         <ul>
             <p>Median Personal Salary:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1fvEm&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjxw&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
             <p>Federal Minimum Wage:</p>
             <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gjuV&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
@@ -97,7 +94,6 @@
             <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj7Z&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
         </ul>
     </section>
-    
 
     <section id="crypto">
         <h2>Crypto Statistics</h2>
@@ -117,13 +113,11 @@
         <p>Methodology: Our approach involves collecting, aggregating, and analyzing the most recent and reliable data available from the mentioned sources. We aim to present accurate and up-to-date information on key financial metrics. It's important to note that while we strive for precision, the presented data may be subject to periodic revisions by the source providers.</p>
     </section>
     
-
     <footer>
         <p>Page last updated on 02/08/2024. This information is for informational purposes only. Please note that data may be subject to change.</p>
     </footer>
 
     <script>
-        // Show the introduction section by default
         showSection('introduction');
     </script>
 
