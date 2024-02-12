@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     return render_template('home.html')
 
-@app.route('/calculator', methods=['GET', 'POST'])
+@app.route('/total-finance-calculator', methods=['GET', 'POST'])
 def calculator():
     if request.method == 'POST':
         try:
