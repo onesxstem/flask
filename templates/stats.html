@@ -4,26 +4,8 @@
 {% block title %}Calculator - MxMonex{% endblock %}
 
 {% block content %}
-    <style>
-        .embed-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 75%; /* Adjust the aspect ratio based on your needs */
-}
 
-.embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-    </style>
-
-    <title>Financial Statistics</title>
+<link rel="stylesheet" type="text/css" href="/static/css/stats.css">
 
 <body>
 
@@ -46,7 +28,7 @@
     </nav>
 
     <section id="introduction">
-        <p>Welcome to our comprehensive overview of key economic indicators and trends. Our goal is to deliver a clear and insightful picture of important financial topics affecting individuals and households.</p>
+        <p>Welcome to our comprehensive overview of key economic indicators and trends affecting individuals and households.</p>
         <p>Explore the example interactive chart below to visualize the dynamic trends in M2 money supply over time.</p>
         <p>Please note that the data presented here is based on the latest available information and is subject to change.</p>
             <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eyEO&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
