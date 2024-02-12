@@ -280,7 +280,7 @@ def article(article_id):
     else:
         abort(404)
 
-@app.route('/stats')
+@app.route('/economy-statistics')
 def stats():
     return render_template('stats.html')
 
@@ -288,15 +288,15 @@ def stats():
 def store():
     return render_template('store.html')
 
-@app.route('/mobile_app')
+@app.route('/mobile-app')
 def mobile_app():
     return render_template('mobile_app.html')
 
-@app.route('/about_us')
+@app.route('/about-us')
 def about_us():
     return render_template('about_us.html')
 
-@app.route('/contact_us')
+@app.route('/contact-us')
 def contact_us():
     return render_template('contact_us.html')
 
