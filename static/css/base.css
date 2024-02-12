@@ -1,0 +1,77 @@
+/* base.css */
+
+body, html {
+            min-height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .custom-main {
+            background-color: #212529;
+            padding: 20px;
+            flex-grow: 1;
+            color: white;
+        }
+
+        footer {
+            background-color: #0f0f10;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            clear: both;
+            margin-top: auto;
+        }
+
+        .navbar {
+            background-color: #0f0f10;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: start;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px;
+        }
+
+        .custom-button {
+            background-color: #0f0f10;
+            margin-bottom: 10px;
+        }
+
+        .custom-input-group {
+            display: flex;
+            height: 34px;
+            margin-bottom: 10px;
+        }
+
+        .custom-prefix {
+            padding: 0px 14px;
+            background-color: #0f0f10;
+            color: rgb(148, 159, 161);
+            border-radius: 4px 0px 0px 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-input {
+            width: 120px;
+            border-radius: 0px 4px 4px 0px;
+            border: 1px solid rgb(229, 229, 229);
+            padding: 0px 10px;
+            font-size: 14px;
+        }
+
+        .custom-btn {
+        background-color: #0099af;
+        color: #0f0f10;
+    
+        }
