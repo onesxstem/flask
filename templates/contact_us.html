@@ -42,20 +42,16 @@
         <button type="submit">Submit</button>
     </form>
 
-    <!-- Confirmation Message Container -->
     <div id="confirmationMessage" style="display:none;">
         <p>Thank you for reaching out! We have received your message and will get back to you shortly.</p>
     </div>
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function (event) {
-            // Prevent the form from submitting
             event.preventDefault();
 
-            // Display the confirmation message
             document.getElementById('confirmationMessage').style.display = 'block';
 
-            // Clear input fields after 3 seconds
             setTimeout(function () {
                 document.getElementById('confirmationMessage').style.display = 'none';
                 document.getElementById('name').value = '';

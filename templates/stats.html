@@ -4,19 +4,27 @@
 {% block title %}Calculator - MxMonex{% endblock %}
 
 {% block content %}
+    <style>
+        .embed-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 75%; /* Adjust the aspect ratio based on your needs */
+}
+
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    </style>
 
     <title>Financial Statistics</title>
-    <script>
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
-            var selectedSection = document.getElementById(sectionId);
-            selectedSection.style.display = 'block';
-        }
-    </script>
-</head>
+
 <body>
 
     <header>
@@ -25,7 +33,7 @@
 
     <nav>
         <label for="sections">Select a Section:</label>
-        <select id="sections" onchange="showSection(this.value)">
+        <select id="sections" onchange="showSection(this.value); loadGraph(this.value);">
             <option value="introduction">Introduction</option>
             <option value="housing">Housing Statistics</option>
             <option value="wage">Wage Statistics</option>
@@ -41,14 +49,14 @@
         <p>Welcome to our comprehensive overview of key economic indicators and trends. Our goal is to deliver a clear and insightful picture of important financial topics affecting individuals and households.</p>
         <p>Explore the example interactive chart below to visualize the dynamic trends in M2 money supply over time.</p>
         <p>Please note that the data presented here is based on the latest available information and is subject to change.</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eyEO&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eyEO&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
     </section>
 
     <section id="wage">
         <h2>Wage Statistics</h2>
         <ul>
             <p>Federal Minimum Wage:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gk49&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gk49&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
         </ul>
     </section>
 
@@ -56,17 +64,17 @@
         <h2>Savings and Investments</h2>
         <ul>
             <p>Average Savings Rate:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1f4k4&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1f4k4&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowtransparency="true"></iframe></div>
         </ul>
-    </section>
+    </section>    
 
     <section id="debt">
         <h2>Debt Statistics</h2>
         <ul>
             <p>Federal Debt:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1cSNC&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1cSNC&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
             <p>Personal Consumer Spending:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eQnW&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1eQnW&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
         </ul>
     </section>
 
@@ -74,11 +82,11 @@
         <h2>Inflation and Prices</h2>
         <ul>
             <p>Consumer Price Index:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj30&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj30&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
             <p>Gas Prices:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj7G&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj7G&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
             <p>Diesel Prices:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj7Z&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj7Z&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
         </ul>
     </section>
 
@@ -86,11 +94,11 @@
         <h2>Crypto Statistics</h2>
         <ul>
             <p>Bitcoin:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4w&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4w&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
             <p>Ethereum:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4z&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj4z&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
             <p>Litecoin:</p>
-            <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj51&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true" loading="lazy"></iframe>
+            <div class='embed-container'><iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1gj51&width=100%&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:525px;" allowTransparency="true"></iframe></div>
         </ul>
     </section>
 
@@ -106,7 +114,18 @@
 
     <script>
         showSection('introduction');
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+        }
     </script>
+
+<script src="https://fred.stlouisfed.org/graph/js/embed.js" type="text/javascript"></script>
     
 </body>
 </html>

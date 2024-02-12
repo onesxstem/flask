@@ -1,163 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body, html {
-            min-height: 100%;
-            margin: 0;
-        }
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
 
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .custom-main {
-            background-color: #212529;
-            padding: 20px;
-            flex-grow: 1;
-            color: white;
-        }
-
-        footer {
-            background-color: #0f0f10;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            clear: both;
-            margin-top: auto;
-        }
-
-        .navbar {
-            background-color: #0f0f10;
-        }
-
-        .navbar-nav {
-            display: flex;
-            justify-content: start;
-        }
-
-        .navbar-nav .nav-item {
-            margin-right: 15px;
-        }
-
-        .custom-button {
-            background-color: #0f0f10;
-            margin-bottom: 10px;
-        }
-
-        .custom-input-group {
-            display: flex;
-            height: 34px;
-            margin-bottom: 10px;
-        }
-
-        .custom-prefix {
-            padding: 0px 14px;
-            background-color: #0f0f10;
-            color: rgb(148, 159, 161);
-            border-radius: 4px 0px 0px 4px;
-            display: flex;
-            align-items: center;
-        }
-
-        .custom-input {
-            width: 120px;
-            border-radius: 0px 4px 4px 0px;
-            border: 1px solid rgb(229, 229, 229);
-            padding: 0px 10px;
-            font-size: 14px;
-        }
-
-        .custom-btn {
-        background-color: #0099af;
-        color: #0f0f10;
-    
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
-            
-            collapseButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    var targetId = this.getAttribute('data-bs-target');
-                    var targetCollapse = document.querySelector(targetId);
-
-                    collapseButtons.forEach(function (otherButton) {
-                        if (otherButton !== button) {
-                            var otherTargetId = otherButton.getAttribute('data-bs-target');
-                            var otherTargetCollapse = document.querySelector(otherTargetId);
-
-                            if (otherTargetCollapse.classList.contains('show')) {
-                                otherTargetCollapse.classList.remove('show');
-                            }
-                        }
-                    });
-
-                    if (targetCollapse.classList.contains('show')) {
-                        targetCollapse.classList.remove('show');
-                    } else {
-                        targetCollapse.classList.add('show');
-                    }
-                });
-            });
-        });
-    </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/static/js/base.js" defer></script>
 </head>
+
 <body>
     <div class="p-5 bg-dark text-white text-center">
         <img src="/static/images/logo.png" alt="MxMonex Logo" style="width: 50px; height: 50px;">
         <h1 class="d-inline" style="color: #0099af;">MxMonex</h1>
         <img src="/static/images/logo.png" alt="MxMonex Logo" style="width: 50px; height: 50px;">
     </div>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/" style="color: white;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/calculator" style="color: white;">Calculators</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/quizzes" style="color: white;">Quizzes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/articles" style="color: white;">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/stats" style="color: white;">Statistics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/store" style="color: white;">Store</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/mobile_app" style="color: white;">Mobile App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact_us" style="color: white;">Contact Us</a>
-                    </li>
-                </ul>
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/" style="color: white;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/calculator" style="color: white;">Calculators</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/quizzes" style="color: white;">Quizzes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/articles" style="color: white;">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/stats" style="color: white;">Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/store" style="color: white;">Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/mobile_app" style="color: white;">Mobile App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact_us" style="color: white;">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -169,10 +67,6 @@
     <footer>
         <p style="color: #0099af;">&copy; 2023 MxMonex. All rights reserved.</p>
     </footer>
-
 </body>
-</html>
-    </footer>
 
-</body>
 </html>

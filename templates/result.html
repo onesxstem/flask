@@ -13,12 +13,10 @@
     <p>FICA Tax: ${{ fica_tax|round(2) }}</p>
     <p>SDI, SUI, FLI Tax: ${{ sdi_sui_fli_tax|round(2) }}</p>
 
-    <!-- Loop through the sorted list of variables in descending order -->
     {% for name, value in variable_list|sort(attribute='1', reverse=true) %}
         <p>{{ name }}: ${{ value|round(2) }}</p>
     {% endfor %}
 
-    <!-- Other tax calculations -->
     <h2>Break Down</h2>
     <p>Total Income: ${{ total_income|round(2) }} (adjusted for inflation)</p>
     <p>Total Savings: ${{ total_savings|round(2) }}</p>
