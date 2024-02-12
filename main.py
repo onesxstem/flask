@@ -269,13 +269,13 @@ def articles():
 
 @app.route('/articles/<article_id>')
 def article(article_id):
-    if article_id == 'article_one':
+    if article_id == 'unmasking-inflation-the-stealth-tax-on-your-wealth':
         return render_template('articles/article_one.html')
-    elif article_id == 'article_two':
+    elif article_id == 'lesser-known-taxes-impacting-your-finances':
         return render_template('articles/article_two.html')
-    elif article_id == 'article_three':
+    elif article_id == 'how-the-wealthy-navigate-tax-liabilities':
         return render_template('articles/article_three.html')
-    elif article_id == 'article_four':
+    elif article_id == 'fractional-reserve-banking-unveiling-the-mechanism-and-risks':
         return render_template('articles/article_four.html')
     else:
         abort(404)
